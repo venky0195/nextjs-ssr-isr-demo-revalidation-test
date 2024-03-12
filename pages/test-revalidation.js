@@ -16,7 +16,7 @@ export async function getServerSideProps({ req, res }) {
   const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Dubai');
   const data = await response.json();
 
-  res.setHeader("cache-control", "s-maxage=2, stale-while-revalidate=2");
+  res.setHeader("cache-control", "s-maxage=0, stale-while-revalidate=1");
 
   console.log(
     "Revalidated Data",
