@@ -12,7 +12,7 @@ export default function QueryParamPage() {
   };
 
   const handleButtonClick = () => {
-    router.push(`/query?value=${inputValue}`);
+    router.push(`?value=${inputValue}`);
   };
 
   return (
