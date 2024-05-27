@@ -1,11 +1,28 @@
-const nextConfig = {
-  experimental: {
-    // Defaults to 50MB
-    isrMemoryCacheSize: 0,
-    generateBuildId: () => {    
-      return  process.env.CONTENTSTACK_LAUNCH_DEPLOYMENT_UID || "testBuild"
-    },
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/old-blog/:slug',
+        destination: '/news/:slug',
+        permanent: true,
+      },
+      {
+        source: '/:path((?!uk/).*)',
+        has: [
+          {
+            type: 'header',
+            key: 'x-vercel-ip-country',
+            value: 'GB',
+          },
+        ],
+        permanent: false,
+        destination: '/uk/:path*',
+      },
+    ];
   },
 };
-
-module.exports = nextConfig
