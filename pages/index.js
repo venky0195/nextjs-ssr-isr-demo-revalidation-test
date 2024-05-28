@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import { redirect } from 'next/navigation';
 
 export const Home = () => {
+  redirect('/blog');
   return (
     <div>
       <p>Home Page...</p>
