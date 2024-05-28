@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 
 export const Home = () => {
   return (
@@ -13,4 +14,6 @@ export const Home = () => {
     </div>
   );
 };
+redirect(`/post/${id}`) // Navigate to the new post page
+
 export default Home;
