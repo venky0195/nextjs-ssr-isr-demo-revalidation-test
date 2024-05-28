@@ -15,5 +15,5 @@ export function middleware(request) {
  
   // Set a new response header `x-hello-from-middleware2`
   response.headers.set('x-hello-from-middleware2', 'hello')
-  return response
+  return NextResponse.redirect(new URL('/blog', request.url))
 }
