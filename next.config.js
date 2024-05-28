@@ -4,6 +4,7 @@ module.exports = {
       {
         source: '/',
         destination: '/blog',
+        permanent: false
       },
       {
         source: '/old-blog/:slug',
