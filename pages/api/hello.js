@@ -7,6 +7,7 @@ export default function handler(req, res) {
       method: req.method,
       body: req.body,
       headers: req.headers,
+      envVars: process.env,
       randomNum: Math.floor((Math.random()*100) + 1)
     });
 }
