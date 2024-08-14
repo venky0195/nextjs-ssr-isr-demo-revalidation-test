@@ -1,4 +1,5 @@
 export default function handler(req, res) {
+  console.log("This is a simple log")
   console.log("env",JSON.stringify(process.env))
   res
     .status(200)
